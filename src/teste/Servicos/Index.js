@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView , Text, FlatList } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-
+import Item from './Item/Index';
 
 const servicos = [
     {
@@ -30,7 +30,7 @@ export default function Servicos(){
         <Text>Servicos!</Text>
         <FlatList
         data={servicos}
-        renderItem={({item: {nome}}) =>  <Text>{nome}</Text> }
+        renderItem={({item}) =>  <Item {...item}/> }
         keyExtractor={(id) => String (id)}
         />
 
